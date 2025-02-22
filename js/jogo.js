@@ -8,7 +8,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('game-container').appendChild(renderer.domElement);
 
-// Adicionar luz
+// Adicionar luz direcional
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(5, 5, 5).normalize();
 scene.add(light);
@@ -35,8 +35,22 @@ function createTriangleMesh() {
 const triangleMesh = createTriangleMesh();
 scene.add(triangleMesh);
 
+// Função para criar um cubo interativo
+function createInteractiveCube() {
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshStandardMaterial({ color: 0x0077ff });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.set(2, 1, 0);
+    cube.userData = { interactive: true }; // Marcar como interativo
+    return cube;
+}
+
+// Adicionar o cubo interativo à cena
+const interactiveCube = createInteractiveCube();
+scene.add(interactiveCube);
+
 // Posicionar a câmera
-camera.position.set(0, 0, 2);
+camera.position.set(0, 0, 5);
 
 // Adicionar controles de órbita
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -54,13 +68,29 @@ function animate() {
 
 animate();
 
+// Adicionar evento de clique para o cubo interativo
+window.addEventListener('click', (event) => {
+    const mouse = new THREE.Vector2();
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    const raycaster = new THREE.Raycaster();
+    raycaster.setFromCamera(mouse, camera);
+
+   caster.intersectObjects(scene.children);
+    intersects.forEach((intersect) => {
+        if (intersect.object.userData.interactive) {
+            intersect.object.material.color.set(0xff0000); // Mudar a cor ao clicar
+        }
+    });
+});
+
 // Função para parametrizar o bordo (exemplo simplificado)
 function parametrizarBordo(vertices) {
     const totalLength = vertices.reduce((acc, v, i, arr) => {
         if (i < arr.length - 1) {
             return acc + v.distanceTo(arr[i + 1]);
         }
-        return acc;
     }, 0);
     let length = 0;
     return vertices.map((v, i, arr) => {

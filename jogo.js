@@ -1,5 +1,7 @@
 import * as THREE from './js/three.module.js';
 import { OrbitControls } from './js/OrbitControls.js';
+import * as THREE from 'https://raw.githubusercontent.com/mrdoob/three.js/dev/build/three.module.js';
+import { OrbitControls } from 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/controls/OrbitControls.js';
 
 // Configuração básica do Three.js
 const scene = new THREE.Scene();

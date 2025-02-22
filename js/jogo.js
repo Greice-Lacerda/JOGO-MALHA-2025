@@ -14,7 +14,7 @@ light.position.set(5, 5, 5).normalize();
 scene.add(light);
 
 // Adicionar luz ambiente
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
 // Função para criar uma malha triangular simples
@@ -27,7 +27,7 @@ function createTriangleMesh() {
     ]);
     geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
-    const mesh = new THREE.Mesh(geometry, material);
+    THREE.Mesh(geometry, material);
     return mesh;
 }
 

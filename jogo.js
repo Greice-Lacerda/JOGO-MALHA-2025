@@ -1,5 +1,6 @@
 import * as THREE from './path/to/three.module.js';
 import { OrbitControls } from './path/to/OrbitControls.js';
+
 // Configuração básica do Three.js
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -7,9 +8,9 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('game-container').appendChild(renderer.domElement);
 
-
+// Adicionar luz
 const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(5, 5, 5).normalize();
+light, 5).normalize();
 scene.add(light);
 
 // Adicionar luz ambiente

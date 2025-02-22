@@ -1,5 +1,5 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'C:\Users\Greice Lacerda\OneDrive\ASSUNTOS DE KELI\ASSUNTOS DIVERSOS 2024\CURSO ADA CODERS 2023\JOGO MALHA 2025\path\three.module.js';
+import { OrbitControls } from 'C:\Users\Greice Lacerda\OneDrive\ASSUNTOS DE KELI\ASSUNTOS DIVERSOS 2024\CURSO ADA CODERS 2023\JOGO MALHA 2025\path\OrbitControls.js';
 
 // Configuração básica do Three.js
 const scene = new THREE.Scene();

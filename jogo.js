@@ -10,7 +10,7 @@ document.getElementById('game-container').appendChild(renderer.domElement);
 
 // Adicionar luz
 const light = new THREE.DirectionalLight(0xffffff, 1);
-light, 5).normalize();
+light.position.set(5, 5, 5).normalize();
 scene.add(light);
 
 // Adicionar luz ambiente

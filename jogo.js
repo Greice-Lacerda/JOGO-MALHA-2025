@@ -1,8 +1,7 @@
-import * as THREE from './js/three.module.js';
-import { OrbitControls } from './js/OrbitControls.js';
-import * as THREE from 'https://raw.githubusercontent.com/mrdoob/three.js/dev/build/three.module.js';
-import { OrbitControls } from 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/controls/OrbitControls.js';
-
+<script type="module">
+    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.137.5/build/three.module.js';
+    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.137.5/examples/jsm/controls/OrbitControls.js';
+</script>
 // Configuração básica do Three.js
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);

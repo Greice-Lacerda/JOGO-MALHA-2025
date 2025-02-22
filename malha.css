@@ -6,14 +6,23 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-   -color: #f0f0f0;
+    background-color: #f0f0f0; /* Corrigido o nome da propriedade */
+    color: #333; /* Adicionado para definir a cor do texto padrão */
 }
 
 h1 {
     color: #333;
+    font-size: 2em; /* Adicionado para melhorar a legibilidade */
+    margin: 0.5em 0; /* Adicionado para espaçamento */
 }
 
 #game-container {
-    width: 100%;
-    height: 100%;
+    width: 90%; /* Ajustado para melhor responsividade */
+    height: 90%; /* Ajustado para melhor responsividade */
+    background-color: #fff; /* Adicionado para destacar o contêiner */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adicionado para um efeito de sombra */
+    border-radius: 10px; /* Adicionado para bordas arredondadas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

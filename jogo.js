@@ -1,5 +1,5 @@
-import * as THREE from './path/to/three.module.js';
-import { OrbitControls } from './path/to/OrbitControls.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
 
 // Configuração básica do Three.js
 const scene = new THREE.Scene();
@@ -18,7 +18,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
 // Função para criar uma malha triangular simples
-functionMesh() {
+function createTriangleMesh() {
     const geometry = new THREE.BufferGeometry();
     const vertices = new Float32Array([
         0, 0, 0,

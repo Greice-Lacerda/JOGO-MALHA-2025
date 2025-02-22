@@ -77,7 +77,7 @@ window.addEventListener('click', (event) => {
     const raycaster = new THREE.Raycaster();
     raycaster.setFromCamera(mouse, camera);
 
-   caster.intersectObjects(scene.children);
+    const intersects = raycaster.intersectObjects(scene.children);
     intersects.forEach((intersect) => {
         if (intersect.object.userData.interactive) {
             intersect.object.material.color.set(0xff0000); // Mudar a cor ao clicar
@@ -91,6 +91,7 @@ function parametrizarBordo(vertices) {
         if (i < arr.length - 1) {
             return acc + v.distanceTo(arr[i + 1]);
         }
+        return acc;
     }, 0);
     let length = 0;
     return vertices.map((v, i, arr) => {
